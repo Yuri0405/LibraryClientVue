@@ -5,8 +5,17 @@ import MainPage from "./components/MainPage.vue"
 <template>
   <div class="libraryheader">
     <h1>Library</h1>
+    <div class="topnav">
+      <router-link to="/" class="topnav-elem">Home</router-link>
+      <router-link to="/books" class="topnav-elem">Books</router-link>
+      <router-link to="/about" class="topnav-elem">About</router-link>
+      <div style="float:right;">
+        <router-link to="/login" class="topnav-elem">Login</router-link>|
+        <router-link to="/signin" class="topnav-elem">SignIn</router-link>
+      </div>
+    </div>
   </div>
-  <MainPage/>
+  <router-view />
 </template>
 
 <style scoped>
@@ -20,7 +29,7 @@ import MainPage from "./components/MainPage.vue"
   background-color: #333;
   overflow: hidden;
 }
-.topnav span {
+.topnav-elem {
   float: left;
   color: #f2f2f2;
   text-align: center;
